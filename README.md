@@ -1,5 +1,5 @@
 # 🎵 LyriFind — Lyrics Discovery & Management Platform
-> ⚖️ **Lyrics & copyright:** all sample lyrics in `scripts/seed.js` are **original text written for this project**. Do not add copyrighted lyrics without a licence.
+> 
 
 ---
 
