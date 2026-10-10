@@ -45,7 +45,7 @@ Open **http://localhost:5000** in your browser.
 ### Demo accounts
 | Role | E-mail | Password |
 |---|---|---|
-| Admin | `admin@lyrifind.local` | `Admin1234` |
+| Admin |  | |
 | User | register your own from the UI | min 8 chars, letter + number |
 
 > Change the demo admin password / `ADMIN_EMAIL` before any real deployment.
