@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LyriFind - Lyrics Discovery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎵 LyriFind</h1>
+    <div id="authArea"></div>
+  </header>
+
+  <main>
+    <section class="search">
+      <input id="q" type="search" placeholder="Search title, artist or album…" aria-label="Search songs" />
+      <select id="language" aria-label="Filter by language"><option value="">All languages</option></select>
+      <select id="genre" aria-label="Filter by genre"><option value="">All genres</option></select>
+      <button id="searchBtn">Search</button>
+      <button id="favToggle" class="ghost" hidden>❤ My favorites</button>
+    </section>
+
+    <div id="message" role="status"></div>
+    <section id="results" class="grid"></section>
+    <nav id="pager" class="pager"></nav>
+
+    <section id="adminPanel" class="panel" hidden>
+      <h2>Admin: add a song</h2>
+      <form id="songForm">
+        <input name="title" placeholder="Title *" required />
+        <input name="artist" placeholder="Artist *" required />
+        <input name="album" placeholder="Album" />
+        <input name="language" placeholder="Language" />
+        <input name="genre" placeholder="Genre" />
+        <input name="year" type="number" placeholder="Year" />
+        <textarea name="lyrics" rows="5" placeholder="Original / licensed lyrics *" required></textarea>
+        <button type="submit">Save song</button>
+      </form>
+    </section>
+  </main>
+
+  <dialog id="lyricsDialog"><article id="lyricsBody"></article><button id="closeDialog" class="ghost">Close</button></dialog>
+  <dialog id="authDialog">
+    <form id="authForm">
+      <h2 id="authTitle">Login</h2>
+      <input name="name" placeholder="Name" hidden />
+      <input name="email" type="email" placeholder="Email" required />
+      <input name="password" type="password" placeholder="Password" required />
+      <button type="submit">Submit</button>
+      <button type="button" id="authSwitch" class="ghost">Need an account? Register</button>
+      <button type="button" id="authClose" class="ghost">Cancel</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
