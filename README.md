@@ -1,11 +1,4 @@
 # 🎵 LyriFind — Lyrics Discovery & Management Platform
-
-**Week 2 deliverable – Implementation of a Mini Software Module**
-Software Engineering Trainee Internship · YuvaIntern · Author: Ankit Kushwaha
-
-LyriFind lets people search for songs, read lyrics, and save favourites; administrators manage the song catalogue.
-This repository contains the **Week 2 module**: a secure REST API (**Authentication + Songs CRUD + Search/Filter/Pagination + Favorites**) and a small web UI that demonstrates it. It continues the plan from the Week 1 report.
-
 > ⚖️ **Lyrics & copyright:** all sample lyrics in `scripts/seed.js` are **original text written for this project**. Do not add copyrighted lyrics without a licence.
 
 ---

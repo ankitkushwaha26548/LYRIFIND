@@ -1,7 +1,7 @@
 {
   "name": "lyrifind",
   "version": "1.0.0",
-  "description": "LyriFind - Lyrics Discovery & Management Platform (Week 2 module: Authentication + Songs CRUD + Search + Favorites)",
+  "description": "LyriFind - Lyrics Discovery & Management Platform",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

@@ -3,3 +3,7 @@ node_modules/
 data/db.json
 coverage/
 *.log
+.env.example
+.env
+package-lock.json   
+.DS_Store
