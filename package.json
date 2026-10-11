@@ -1,0 +1,22 @@
+{
+  "name": "lyrifind",
+  "version": "2.0.0",
+  "private": true,
+  "description": "LyriFind - Lyrics Discovery & Management Platform (React + Vite, Tailwind CSS, Node.js + Express, MongoDB + Mongoose)",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "seed": "npm run seed --prefix server",
+    "test": "npm test --prefix server",
+    "start:embedded": "npm run start:embedded --prefix server",
+    "dev:embedded": "concurrently -n api,web -c blue,magenta \"npm run dev:embedded --prefix server\" \"npm run dev --prefix client\"",
+    "setup": "npm run install:all && npm run build"
+  },
+  "author": "Ankit Kushwaha",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "lyrifind-server",
+  "version": "2.0.0",
+  "description": "LyriFind REST API - Node.js, Express, MongoDB (Mongoose)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "jest --runInBand --coverage",
+    "start:embedded": "node scripts/start-with-embedded-db.js",
+    "dev:embedded": "node scripts/start-with-embedded-db.js"
+  },
+  "license": "MIT",
+  "author": "Ankit Kushwaha",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lyrifind": "file:..",
+    "mongodb-memory-server": "^10.0.0",
+    "mongoose": "^8.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 60000,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js"
+    ]
+  }
+}
