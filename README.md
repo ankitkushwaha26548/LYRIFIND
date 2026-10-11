@@ -92,7 +92,7 @@ To use an existing database instead: `TEST_MONGO_URI=mongodb://127.0.0.1:27017 n
 
 | Role | E-mail | Password |
 |---|---|---|
-| Admin | `admin@lyrifind.local` | `Admin1234` |
+| Admin | |  |
 | User | register on the *Register* page | min 8 characters, letter + number |
 
 > Change `ADMIN_EMAIL` and the demo admin password before any real deployment.
