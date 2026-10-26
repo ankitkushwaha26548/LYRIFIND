@@ -11,7 +11,7 @@ test("case-insensitive title search",()=>assert.equal(searchSongs(songs,"RAIN AG
 test("search by artist",()=>assert.equal(searchSongs(songs,"rain makers")[0].title,"Ocean"));
 test("search by album",()=>assert.equal(searchSongs(songs,"safar")[0].title,"Raat Ki Baat"));
 test("blank query returns copied list",()=>{const r=searchSongs(songs,"  ");assert.equal(r.length,4);assert.notEqual(r,songs)});
-test("missing optional fields do not crash",()=>assert.equal(searchSongs([{title:"Solo"},null],"solo").length,1));
+test("missing optional fields do not crash",()=>assert.equal(searchSongs([{title:"Solo"},null,{}],"solo").length,1));
 test("invalid list returns empty list",()=>assert.deepEqual(searchSongs(null,"x"),[]));
 test("language is case/space insensitive",()=>assert.equal(filterSongsByLanguage(songs," ENGLISH ").length,2));
 test("empty language returns copied list",()=>{const r=filterSongsByLanguage(songs,"");assert.equal(r.length,4);assert.notEqual(r,songs)});

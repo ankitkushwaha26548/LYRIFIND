@@ -1,23 +1,30 @@
+/** Normalize user-provided text once so all helpers use the same rules. */
+const normalizeText = (value) =>
+  typeof value === "string" ? value.trim().toLowerCase() : "";
+
 export function searchSongs(songs, query = "") {
-  const q = String(query ?? "").trim().toLowerCase();
+  const q = normalizeText(query);
   if (!Array.isArray(songs)) return [];
   if (!q) return [...songs];
-  return songs.filter(song => [song?.title, song?.artist, song?.album]
-    .filter(value => typeof value === "string")
-    .join(" ").toLowerCase().includes(q));
+  return songs.filter((song) =>
+    [song?.title, song?.artist, song?.album]
+      .filter((value) => typeof value === "string")
+      .map((value) => value.toLowerCase())
+      .join(" ")
+      .includes(q)
+  );
 }
 export function filterSongsByLanguage(songs, language = "") {
   if (!Array.isArray(songs)) return [];
-  const lang = String(language ?? "").trim().toLowerCase();
+  const lang = normalizeText(language);
   if (!lang) return [...songs];
-  return songs.filter(song => typeof song?.language === "string" &&
-    song.language.trim().toLowerCase() === lang);
+  return songs.filter((song) => normalizeText(song?.language) === lang);
 }
 export function validateSong(song) {
   if (!song || typeof song !== "object" || Array.isArray(song)) return ["Song must be an object."];
   const errors = [];
-  if (typeof song.title !== "string" || !song.title.trim()) errors.push("Title is required.");
-  if (typeof song.artist !== "string" || !song.artist.trim()) errors.push("Artist is required.");
+  if (!normalizeText(song.title)) errors.push("Title is required.");
+  if (!normalizeText(song.artist)) errors.push("Artist is required.");
   if (song.language != null && typeof song.language !== "string") errors.push("Language must be a string when provided.");
   return errors;
 }

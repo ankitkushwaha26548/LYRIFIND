@@ -191,5 +191,28 @@ React (Vite)  ──HTTP/JSON──▶  Express routes ─▶ middleware (JWT, r
 * Week 3: testing & debugging exercise · Week 4: code review & refactoring · Week 5: performance tests & deployment (Render + Netlify/Vercel or single-server hosting).
 * Not yet implemented: password reset, refresh tokens, separate Artist/Album collections, front-end unit tests.
 
+## Week 3 testing and Week 4 refactoring
+
+The repository also includes the focused Week 3 and Week 4 modules in `backend/`. They extend the original Week 2 application in `server/` and `client/`; they do not replace the application.
+
+### Week 3 testing and debugging
+
+The standalone test module covers song search, language filtering, validation, edge cases, and input immutability. It uses Node.js built-in `node:test` and `assert` APIs, so it does not require MongoDB or third-party packages.
+
+```bash
+cd backend
+npm test
+```
+
+The recorded result is 15 tests passed, 0 failed, and 0 skipped. See [`backend/DEBUGGING_REPORT.md`](backend/DEBUGGING_REPORT.md) and [`backend/TEST_RESULTS.md`](backend/TEST_RESULTS.md) for the scenarios, evidence, and limitations.
+
+### Week 4 code review and refactoring
+
+The Week 4 refactoring centralizes text normalization and validation, safely handles missing fields and invalid lists, preserves the original song list, and keeps the utility logic independently testable. The same 15-test regression suite verifies the focused behavior.
+
+The complete findings and before-and-after analysis are documented in [`CODE_REVIEW_REPORT.md`](CODE_REVIEW_REPORT.md), with implementation notes in [`REFACTORING_CHANGELOG.md`](REFACTORING_CHANGELOG.md). The standalone module is [`backend/src/songUtils.js`](backend/src/songUtils.js), and its tests are [`backend/tests/songUtils.test.js`](backend/tests/songUtils.test.js).
+
+The full server suite can be run with `cd server && npm test`. It requires a MongoDB binary for `mongodb-memory-server`; if the download is unavailable, the integration hooks may time out even though the standalone utility tests do not need a database.
+
 ## License
 MIT — for educational use.
