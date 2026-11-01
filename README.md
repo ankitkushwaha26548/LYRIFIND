@@ -214,5 +214,11 @@ The complete findings and before-and-after analysis are documented in [`CODE_REV
 
 The full server suite can be run with `cd server && npm test`. It requires a MongoDB binary for `mongodb-memory-server`; if the download is unavailable, the integration hooks may time out even though the standalone utility tests do not need a database.
 
+# LyriFind Week 5 package
+Run with Node.js 18+: from backend run `npm test` and `npm run perf`.
+The performance script uses 5,000 synthetic song records and 500 iterations per operation by default. It measures in-process JavaScript functions only, not HTTP/network/hosting/MongoDB or real users.
+Merge these files into your existing Week 2–4 LyriFind repository; do not replace the full app. Adapt a separate staging HTTP load test to actual API endpoints for production-like measurements.
+
+
 ## License
 MIT — for educational use.

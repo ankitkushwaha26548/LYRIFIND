@@ -1,0 +1,40 @@
+{
+  "test_type": "local in-process microbenchmark; synthetic dataset; not HTTP load",
+  "node": "v22.16.0",
+  "platform": "win32 x64",
+  "cpu_model": "12th Gen Intel(R) Core(TM) i5-12450H",
+  "logical_cpus": 12,
+  "records": 5000,
+  "iterations": 500,
+  "heap_before_mb": 5.59,
+  "heap_after_mb": 6.03,
+  "rss_after_mb": 41.93,
+  "cpu_user_ms": 422,
+  "cpu_system_ms": 0,
+  "results": [
+    {
+      "operation": "Search title/artist/album",
+      "iterations": 500,
+      "average_ms": 0.781,
+      "p50_ms": 0.753,
+      "p95_ms": 0.989,
+      "throughput_ops_sec": 1280.8
+    },
+    {
+      "operation": "Filter by language",
+      "iterations": 500,
+      "average_ms": 0.1,
+      "p50_ms": 0.088,
+      "p95_ms": 0.159,
+      "throughput_ops_sec": 9991.6
+    },
+    {
+      "operation": "Validate one record",
+      "iterations": 500,
+      "average_ms": 0,
+      "p50_ms": 0,
+      "p95_ms": 0,
+      "throughput_ops_sec": 2593361
+    }
+  ]
+}
